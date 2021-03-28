@@ -18,10 +18,10 @@ C++ Classes to read CSV and Properties (Key/Value) files
   
   PropertiesFileReader fr("file.prop", ':');
 
-  // Get all the values with key = "key"
+  // Get all the values with key = "key", as strings 
   for (auto& v : fr.values("key")) std::cout << v << std::endl;
 
-  // Get value with key "key" 	
+  // Get value with key "key", as string
   std::cout << fr["key"] << std::endl;
   std::cout << fr.value("key") << std::endl;
 
