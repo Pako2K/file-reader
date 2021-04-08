@@ -182,7 +182,7 @@ namespace utils
   template <class TYPE, typename >
   TYPE PropertiesFileReader::value(const std::string& key) const {
     auto match_iter = _properties.equal_range(key);
-    if (match_iter.first != _properties.end()) {
+    if (match_iter.first != _properties.end() && match_iter.first != match_iter.second) {
       if constexpr (std::is_same<TYPE, std::string>::value)
         return match_iter.first->second;
       else {
@@ -195,7 +195,7 @@ namespace utils
       }
     }
     else
-      throw std::out_of_range("Key not found: " + key);
+      throw std::out_of_range("Property not found: " + key);
   }
   
 }

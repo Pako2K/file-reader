@@ -15,6 +15,13 @@ int main() {
   for (auto& v : res) std::cout << v << std::endl;
 
   std::cout << fr["key"] << std::endl;
+  try {
+    std::cout << fr["key4"] << std::endl;
+  }
+  catch (std::exception& e) {
+    std::cout << e.what() << std::endl;
+  }
+  
 
   std::string rr = fr.value("key2");
   std::cout << rr << std::endl;
